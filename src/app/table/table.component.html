@@ -1,0 +1,39 @@
+<section id="content">
+    <main>
+        <div class="table-data">
+            <div class="order">
+                <div class="head">
+                    <h3>Touts les Condidate</h3>
+                    <i class='bx bx-search'></i>
+                    <i class='bx bx-filter'></i>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Date Examen</th>
+                            <th>Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let user of Allusers">
+                            <td>
+                                
+                                {{user.userName}}
+                            </td>
+                            <td>
+                                <a href="infoCondidate/{{user.id}}">
+                                    {{user.id}}
+                                </a>
+                            </td>
+                            <td>{{user.date}}</td>
+                            <td>{{user.payments}}</td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</section>

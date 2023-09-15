@@ -1,0 +1,47 @@
+.card{
+    margin: 2rem;
+   }
+   
+   
+   
+   h1 {
+     font-family: 'roboto', sans-serif;
+     transition: all 0.3s ease-in-out;
+   }
+   
+   h1 {
+     height: 100px;
+     width: 100%;
+     font-size: 18px;
+     background:#3C91E6;
+     color: white;
+     line-height: 150%;
+     border-radius: 3px 3px 0 0;
+     box-shadow: 0 2px 5px 1px rgba(0,0,0,0.2);
+   }
+   h3{
+     margin: 0.5rem;
+   }
+   
+   
+   .forms {
+     box-sizing: border-box;
+     width: 60%;
+     margin: 100px auto 0;
+     box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.2);
+     padding-bottom: 40px;
+     border-radius: 3px;
+   }
+   h1 {
+     box-sizing: border-box;
+     padding: 30px;
+     text-align: center;
+   }
+   
+   
+   
+   .cadre{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }

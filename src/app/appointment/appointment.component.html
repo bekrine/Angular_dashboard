@@ -1,0 +1,32 @@
+<div class="card">
+<div class="forms" *ngIf="isHasAppointment">
+    <h1>{{userInfo.id}}</h1>
+    <div class="cadre">
+        <p>Vous avez d'eja un rendez-vous pour passez l'examen le:</p>
+        <h3>{{userInfo.date}}</h3>
+        <p>et vous avez payer le montant de:</p>
+        <h3>{{userInfo.payments}} DH</h3>
+        <button (click)="upDate()" class="button">Modifier</button>
+
+    </div>
+</div>
+
+
+
+    <form   *ngIf="!isHasAppointment"
+            [formGroup]="dateNumberForm"
+             (ngSubmit)="onSubmit()"
+             class="forms"
+             >
+        
+        <h1>choisir une date d’examen, payer le montant de l’examen</h1>
+        <div class="cadre">
+
+            <input type="date" placeholder="Select a Date:" id="selectedDate" formControlName="selectedDate" min="{{dateNew}}">
+            
+            <input type="number" placeholder="Enter a Number:" id="selectedNumber" formControlName="selectedNumber">
+            
+            <button type="submit" class="button">Enregistre</button>
+        </div>
+    </form>
+</div>
