@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
 
 userName:string
+sliceUserName:string
 email:string
 isCondidate:boolean=false
 
@@ -21,10 +22,10 @@ ngOnInit(){
   
   if(this.services.isLogedIn()){
     
-   this.email=sessionStorage.getItem('email').toString()
+   this.userName=sessionStorage.getItem('userName').toString()
    let role=sessionStorage.getItem('role').toString()
    role == "condidate" ?  this.isCondidate = true : this.isCondidate = false
-  this.userName=this.email.slice(0,2).toUpperCase()
+  this.sliceUserName=this.userName.slice(0,2).toUpperCase()
   }
   
 }
@@ -33,7 +34,7 @@ ngOnInit(){
 
 logout(){
   this.services.logOut()
-  this.router.navigate(['/login-signin'])
+  this.router.navigate(['/'])
 }
 
 

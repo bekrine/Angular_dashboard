@@ -1,93 +1,13 @@
 {
   "user": [
     {
-      "id": "admin@test.com",
+      "id":"1",
       "userName": "simo",
       "email": "admin@test.com",
       "password": "123456",
       "confirmPassword": "123456",
       "role": "Admin"
-    },
-    {
-      "id": "bofrara@email.com",
-      "userName": "tibari",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "",
-      "date": "2023-09-13",
-      "payments": 1111
-    },
-    {
-      "id": "bofrara1@email.com",
-      "userName": "kharid",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "condidate",
-      "date": "2023-09-14",
-      "payments": ""
-    },
-    {
-      "id": "bofrara2@email.com",
-      "userName": "kharid",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "condidate",
-      "date": "2023-09-14",
-      "payments": ""
-    },
-    {
-      "id": "bofrara3@email.com",
-      "userName": "kharid",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "condidate",
-      "date": "2023-09-14",
-      "payments": 11
-    },
-    {
-      "id": "bofrara4@email.com",
-      "userName": "kharid",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "condidate",
-      "date": "2023-10-14",
-      "payments": 12
-    },
-    {
-      "id": "bofrara5@email.com",
-      "userName": "kharid",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "condidate",
-      "date": "2023-09-14",
-      "payments": 10
-    },
-    {
-      "id": "bofrara6@email.com",
-      "userName": "kharid",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "condidate",
-      "date": "",
-      "payments": 10
-    },
-    {
-      "id": "bofrara7@email.com",
-      "userName": "kharid",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "condidate",
-      "date": "",
-      "payments": 10
-    },
-    {
-      "id": "bofrara8@email.com",
-      "userName": "kharid",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "condidate",
-      "date": "",
-      "payments": 10
     }
+    
   ]
 }

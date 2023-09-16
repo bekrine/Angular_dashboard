@@ -17,8 +17,8 @@ export class AuthService {
     return this.http.get(this.apiUrl)
   }
 
-getUser(email:string| null | undefined){
-  return this.http.get(`${this.apiUrl}/${email}`)
+getUser(id:string| null | undefined){
+  return this.http.get(`${this.apiUrl}/${id}`)
 }
 // {id:number,userName:string,password:string,email:string,role:'Admin'|'condidate'}
 register(dataUser:any){
@@ -30,7 +30,7 @@ updateUser(id:number,dataUser:{id:number,userName:string,password:string,email:s
 }
 
 isLogedIn(){
-  return sessionStorage.getItem('email') !== null
+  return sessionStorage.getItem('id') !== null
 }
 getUserRole(){
   return sessionStorage.getItem('role') !== null ? sessionStorage.getItem('role')?.toString() : ''

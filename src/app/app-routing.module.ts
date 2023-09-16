@@ -2,23 +2,31 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './register/register.component';
-import { authGuard } from './guard/auth.guard';
+import { authGuard, authGuardAdmin } from './guard/auth.guard';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { InfoCondidateComponent } from './info-condidate/info-condidate.component';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
 const routes: Routes = [
   {path:'dashboard',
   component:DashboardComponent,
-  canActivate:[authGuard]
+  canActivate:[authGuard,authGuardAdmin]
 },
-  {path:'login-signin',component:RegisterComponent},
+  {path:'',component:RegisterComponent},
   {
     path:'appointment',
-    component:AppointmentComponent
+    component:AppointmentComponent,
+  canActivate:[authGuard]
+
   },
   {
-    path:'infoCondidate/:email',
-    component:InfoCondidateComponent
+    path:'infoCondidate/:id',
+    component:InfoCondidateComponent,
+  canActivate:[authGuard,authGuardAdmin]
+
+  },{
+    path:'notAuthorized',
+    component:NotAuthorizedComponent
   }
 ];
 

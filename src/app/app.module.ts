@@ -20,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { InfoCondidateComponent } from './info-condidate/info-condidate.component';
+import { NotAuthorizedComponent } from './not-authorized/not-authorized.component';
 
 
 
@@ -37,6 +38,7 @@ import { InfoCondidateComponent } from './info-condidate/info-condidate.componen
     DashboardComponent,
     AppointmentComponent,
     InfoCondidateComponent,
+    NotAuthorizedComponent,
 
   ],
   imports: [

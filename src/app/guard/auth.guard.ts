@@ -13,7 +13,22 @@ export const authGuard: CanActivateFn = (route, state) => {
   if(service.isLogedIn()){
     return true
   }else{
-    router.navigate(['/login-signin'])
+    router.navigate([''])
+    return false
+  }
+ 
+};
+export const authGuardAdmin: CanActivateFn = (route, state) => {
+
+  const service = inject(AuthService)
+  const router = inject(Router)
+
+  let role = sessionStorage.getItem('role')?.toString() 
+
+  if(service.isLogedIn() && role === 'Admin' ){
+    return true
+  }else{
+    router.navigate(['notAuthorized'])
     return false
   }
  

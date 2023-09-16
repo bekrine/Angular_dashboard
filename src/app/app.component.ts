@@ -13,7 +13,7 @@ export class AppComponent implements DoCheck {
 
   ngDoCheck(): void {
     let currentUrl = this.router.url
-    if(currentUrl !== '/login-signin'){
+    if(currentUrl !== '/'){
       this.showMenu = true
     }else{
       

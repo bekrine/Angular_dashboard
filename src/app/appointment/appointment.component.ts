@@ -13,7 +13,7 @@ export class AppointmentComponent {
   dateNumberForm: FormGroup;
   dateNew=new Date().toISOString().split('T')[0]
   isHasAppointment:boolean
-userInfo:object
+  userInfo:object
 
   constructor(private formBuilder: FormBuilder, private services:AuthService,private toaste:ToastrService ){
     
@@ -26,7 +26,7 @@ userInfo:object
 
     chekckIfHasAppointment(){
       let userdate=sessionStorage.getItem('date').toString()
-      let userId=sessionStorage.getItem('email').toString()
+      let userId=sessionStorage.getItem('id').toString()
       
       if(userdate === ''){
         return this.isHasAppointment=false
@@ -57,7 +57,7 @@ userInfo:object
         const selectedNumber = this.dateNumberForm.get('selectedNumber').value;
         if(this.services.isLogedIn()){
          
-          let userId=sessionStorage.getItem('email')
+          let userId=sessionStorage.getItem('id')
           let user:any
           this.services.getUser(userId).subscribe(res=>{
           user=res

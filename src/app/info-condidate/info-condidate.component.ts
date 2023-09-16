@@ -14,8 +14,8 @@ export class InfoCondidateComponent {
 
   ngOnInit(){
     this.route.params.subscribe(params=>{
-      const email = params['email']
-      this.services.getUser(email).subscribe(res=>{
+      const id = params['id']
+      this.services.getUser(id).subscribe(res=>{
         this.user = res
       })
     
