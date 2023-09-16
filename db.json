@@ -1,13 +1,12 @@
 {
   "user": [
     {
-      "id":"1",
+      "id": "1",
       "userName": "simo",
       "email": "admin@test.com",
       "password": "123456",
       "confirmPassword": "123456",
       "role": "Admin"
     }
-    
   ]
 }

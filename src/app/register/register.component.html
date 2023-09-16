@@ -10,12 +10,24 @@
 
                     <div class="group">
                         <label for="user" class="label">Email Address</label>
-                        <input id="user" formControlName="email" name="user" type="text" class="input" />
+                        <input id="user" formControlName="email" name="user" type="text" class="input"  (blur)="controlNames.emailTouched = true"/>
                     </div>
-                    <div class="group">
+                    <div class="errors" *ngIf="controlNames.emailTouched && userLoginForm.get('email').hasError('required')  " >
+                        Email is required.
+                      </div>
+                      <div class="errors" *ngIf="controlNames.emailTouched && userLoginForm.get('email').hasError('email') ">
+                        Please enter a valid email address.
+                      </div>
+                    <div  class="group">
                         <label for="pass" class="label">Password</label>
-                        <input id="pass" formControlName="password" name="pass" type="password" class="input"  data-type="password"/>
+                        <input id="pass" formControlName="password" name="pass" type="password" class="input" (blur)="controlNames.passwordTouched = true"  data-type="password"/>
                     </div>
+                    <div class="errors" *ngIf="controlNames.passwordTouched && userLoginForm.get('password').hasError('required')  " >
+                        Password is required.
+                      </div>
+                      <div class="errors" *ngIf="controlNames.passwordTouched && userLoginForm.get('password').hasError('minlength')   ">
+                        min length is 6 caracter
+                      </div>
                     <div class="group">
                         <input id="check" type="checkbox" class="check" checked/>
                         <label for="check"><span class="icon"></span> Keep me Signed in</label>
@@ -34,23 +46,38 @@
                 <form [formGroup]="userForm" (ngSubmit)="registration()">
                 <div class="group">
                     <label for="userName" class="label">Username</label>
-                    <input  formControlName="userName"  type="text" class="input" />
+                    <input  formControlName="userName"  type="text" class="input" (blur)="controlNames.userNameTouched = true" />
+                    <div class="errors" *ngIf="controlNames.userNameTouched && userForm.get('userName').hasError('required')   " >
+                        UserName is required.
+                      </div>
                 </div>
                 <div class="group">
                     <label for="pass" class="label">Password</label>
-                    <input id="password" formControlName="password" type="password" name="password" class="input" data-type="password" />
+                    <input id="password" formControlName="password" type="password" name="password" class="input" data-type="password" (blur)="controlNames.registerPasswordTouched = true" />
                 </div>
+                <div class="errors" *ngIf="controlNames.registerPasswordTouched && userForm.get('password').hasError('required')" >
+                    Password is required.
+                  </div>
+                  <div class="errors" *ngIf="controlNames.registerPasswordTouched && userForm.get('password').hasError('minlength') ">
+                    min length is 6 caracter
+                  </div>
                 <div class="group">
                     <label for="pass" class="label">Repeat Password</label>
-                    <input id="repetpass" formControlName="confirmPassword" type="password" name="repetPassword" class="input" data-type="password" />
-                    <div *ngIf="userForm.hasError('passwordMismatch')">
+                    <input id="repetpass" formControlName="confirmPassword" type="password" name="repetPassword" class="input" data-type="password" (blur)="controlNames.registerConfirmePasswordTouched = true" />
+                    <div class="errors" *ngIf="controlNames.registerConfirmePasswordTouched && userForm.hasError('passwordMismatch')">
                         Passwords do not match.
                       </div>
                 </div>
                 <div class="group">
                     <label for="pass" class="label">Email Address</label>
-                    <input id="email" formControlName="email" type="text"  class="input" />
+                    <input id="email" formControlName="email" type="text"  class="input" (blur)="controlNames.registerEmailTouched = true" />
                 </div>
+                <div class="errors" *ngIf="controlNames.registerEmailTouched && userForm.get('email').hasError('required') " >
+                    Email is required.
+                  </div>
+                  <div class="errors" *ngIf="controlNames.registerEmailTouched && userForm.get('email').hasError('email') ">
+                    Please enter a valid email address.
+                  </div>
                 <div class="group">
                     <button  type="submit" class="button" >Sign Up</button>
                 </div>

@@ -151,3 +151,8 @@
 	color: #fff;
 	
 }
+
+.errors{
+	color: red;
+	margin: .5rem;
+}

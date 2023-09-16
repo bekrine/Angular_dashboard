@@ -32,6 +32,6 @@ addToggle()
 
 logout(){
   this.services.logOut()
-  this.router.navigate(['/login-signin'])
+  this.router.navigate(['/'])
 }
 }

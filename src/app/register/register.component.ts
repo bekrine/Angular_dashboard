@@ -12,6 +12,19 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
 
   user: any
+  cradontialValidation: boolean
+
+  controlNames={
+
+    emailTouched :false,
+    passwordTouched :false,
+    // register
+    registerEmailTouched :false,
+    registerPasswordTouched :false,
+    registerConfirmePasswordTouched :false,
+    userNameTouched :false,
+  }
+
   constructor(private formBuilder: FormBuilder,
     private toaster: ToastrService,
     private services: AuthService,
@@ -48,7 +61,7 @@ export class RegisterComponent {
     if (this.userForm.valid) {
       this.services.register(this.userForm.value).subscribe(res => {
         this.toaster.success('Register Successfly')
-        this.router.navigate(['/'])
+        window.location.reload()
 
       })
     } else {
@@ -66,30 +79,37 @@ export class RegisterComponent {
 
   login() {
 
-
     this.services.getAllUsers().subscribe(res => {
-      Object.values(res).forEach(user => {
-        if (user.password === this.userLoginForm.value.password &&
-          user.email === this.userLoginForm.value.email) {
-            console.log(user)
-          sessionStorage.setItem('id', user.id)
-          sessionStorage.setItem('userName', user.userName)
-          sessionStorage.setItem('role', user.role)
-          sessionStorage.setItem('date', user.date)
-          if (user.role === 'Admin') {
-            this.router.navigate(['/dashboard'])
-    
+      let userLogedIn
+      let users = Object.values(res)
+      userLogedIn=users.filter(user => user.password === this.userLoginForm.value.password && user.email === this.userLoginForm.value.email )
+      if(userLogedIn.length > 0){
+        
+        sessionStorage.setItem('id', userLogedIn[0].id)
+        sessionStorage.setItem('userName', userLogedIn[0].userName)
+        sessionStorage.setItem('role', userLogedIn[0].role)
+        sessionStorage.setItem('date', userLogedIn[0].date)
+        if (userLogedIn[0].role === 'Admin') {
+          this.router.navigate(['/dashboard'])
+        
         } else {
-            this.router.navigate(['/appointment'])
-          }
-        } else {
-          this.toaster.warning('Invalid credentials')
+          this.router.navigate(['/appointment'])
         }
-      })
+      }else{
+
+        this.toaster.warning('Invalid credentials')
+      }
+  
     })
+  }
 
-
+  clearError(controlName: string) {
+    this.controlNames[controlName] = true
   }
 
 
+
 }
+  
+  
+
