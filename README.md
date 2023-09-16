@@ -2,26 +2,24 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.1.
 
-## Development server
+ ##Exécution du projet## :
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ 1:Prérequis : Assurez-vous d'avoir Node.js installé sur votre système. Si ce n'est pas le cas, vous pouvez le télécharger à partir du site officiel : Node.js.
+ 2:Cloner le projet :Téléchargez ou clonez le projet depuis le référentiel GitHub.
+ 3:Ouvrez votre terminal/commande dans le répertoire du projet.
+ 4:Installez les dépendances en exécutant la commande suivante : npm install
+ 5:Démarrer json-server :json-server --watch db.json
+ 6:Démarrer l'application Angular : Utilisez la commande suivante pour démarrer l'application Angular : ng serve
+   L'application sera accessible à l'adresse http://localhost:4200/ par défaut.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   ##Utilisation de l'application :
 
-## Build
+ 1:Ouvrez un navigateur web et accédez à l'adresse http://localhost:4200/ une page de login et de registration s'afficher 
+ 2:Accede a l'application : il ya deux type de login Admin et candidate :
+                          pour accéder comme Admin utiliser les donnés suivant : {email:admin@test.com,passwrd:123456}
+                          pour acceder comme candidate il faut tout d'abord créer un compte et aprez le login
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3:Admin => une table de borde s'affiche qui contain des infos sur les candidate visualiser avec des graphes et un tableau  qui container des lines pour chaque candidat pour l'afficher               des informations personnelles aussi, tu peux filtre la table en rechercher des candidates par leur username
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+4:Candidate : Après login si le candidate na pas de rendez-vous une forme s'afficher pour choisie la la date d'examen et payer le montant, si le candidate a déjà réservez une date une               cadre s'afficher qui contiens la date et le montant payer et un button pour le modifier
